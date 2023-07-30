@@ -16,11 +16,13 @@ const singleMedia = (dest, name) => {
             destination: (req, file, cb) => cb(null, dest),
             filename: (req, file, cb) => {
 
-                if (fs.existsSync("../images/" + file.originalname.replaceAll(" ", "_"))) {
-                    cb(null, file.originalname.substr(0, file.originalname.lastIndexOf(".")).replaceAll(" ", "_") + "_" + Date.now() + "_" + path.extname(file.originalname))
-                } else {
-                    cb(null, file.originalname.replaceAll(" ", "_"))
-                }
+                  // if (fs.existsSync("../images/" + file.originalname.replaceAll(" ", "_"))) {
+                //     cb(null, file.originalname.substr(0, file.originalname.lastIndexOf(".")).replaceAll(" ", "_") + "_" + Date.now() + "_" + path.extname(file.originalname))
+                // } else {
+                //     cb(null, file.originalname.replaceAll(" ", "_"))
+                // }
+
+                cb(null, file.originalname.replaceAll(" ", "_"))
 
             },
         }),
