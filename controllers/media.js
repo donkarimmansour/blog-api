@@ -5,10 +5,6 @@ const fs = require("fs")
 //create Media
 const createMedia = (req, res) => {
 
-    res.status(codes.ok).json({ result: "111" }) 
-
-    return;
-    
     const { filename } = req.file
     const { type } = req.body
 
