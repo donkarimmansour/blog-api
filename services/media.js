@@ -12,8 +12,8 @@ const createMedia = (url, type) => {
                 resolve(doc._id)
 
             }).catch(err => {
-                if (fs.existsSync("../images/" + url)) {
-                    fs.unlink("../images/" + url, () => { })
+                if (fs.existsSync("./images/" + url)) {
+                    fs.unlink("./images/" + url, () => { })
                 }else{
                     reject(err) 
                 }
