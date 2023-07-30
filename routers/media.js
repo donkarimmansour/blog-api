@@ -12,7 +12,7 @@ const { View } = require("../middleware/validators/media")
 router.get(ApiEndpoints.Media.view, View, HandleValidatorError, MediaController.getMedia, handleError)
 
 // create
-router.post(ApiEndpoints.Media.create, authMiddleware, singleMedia("./images", "image") , MediaController.createMedia , handleError)
+router.post(ApiEndpoints.Media.create, authMiddleware, singleMedia("/images", "image") , MediaController.createMedia , handleError)
 
 
 module.exports = router
